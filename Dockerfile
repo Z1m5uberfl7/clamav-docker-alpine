@@ -1,5 +1,5 @@
 FROM alpine:3.14
-LABEL maintainer "https://github.com/Z1m5uberfl7"
+LABEL maintainer "https://github.com/j1mprime"
 
 RUN apk add --no-cache bash clamav clamav-daemon clamav-libunrar
 
