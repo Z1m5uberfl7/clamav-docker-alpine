@@ -1,7 +1,7 @@
 # clamav-docker-alpine
 Dockerhub: https://hub.docker.com/repository/docker/j1mprime/clamav-docker-alpine
 
-Github: https://github.com/Z1m5uberfl7/clamav-docker-alpine.git
+Github: https://github.com/j1mprime/clamav-docker-alpine.git
 
 This image provides the clamav alpine image with preloaded main.cvd.
 <b>Using this container will save the ClamAV project some bandwidth.</b>
@@ -21,8 +21,8 @@ Clamd  will listen on port 3310. Publish port 3310 on the host:
       docker run -d -p 3310:3310 j1mprime/clamav-docker-alpine:1.0.0-alpine-3.14-maincvd-20211115
 
 ## Build and run the image locally
-1. Checkout https://github.com/Z1m5uberfl7/clamav-docker-alpine.git
-1. Download https://database.clamav.net/main.cvd? from clamav server.
+1. Checkout https://github.com/j1mprime/clamav-docker-alpine.git
+1. Download https://database.clamav.net/main.cvd from clamav server.
 2. Copy main.cvd next to Dockerfile
 2. Build, Deploy and Run
     <pre>docker build . --no-cache -t j1mprime/clamav-docker-alpine:1.0.0-alpine-3.14-maincvd-20211115
