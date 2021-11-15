@@ -13,7 +13,7 @@ COPY check.sh /
 RUN mkdir /var/run/clamav && \
     chown clamav:clamav /var/run/clamav && \
     chmod 750 /var/run/clamav && \
-    chown -R clamav:clamav bootstrap.sh check.sh /etc/clamav && \
+    chown -R clamav:clamav bootstrap.sh check.sh /etc/clamav /etc/clamav/clamd.conf /etc/clamav/freshclam.conf && \
     chmod u+x bootstrap.sh check.sh
 
 EXPOSE 3310

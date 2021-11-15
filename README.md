@@ -20,6 +20,13 @@ Clamd  will listen on port 3310. Publish port 3310 on the host:
 
       docker run -d -p 3310:3310 j1mprime/clamav-docker-alpine:1.0.0-alpine-3.14-maincvd-20211115
 
+## Provide custom freshclam.conf or clamd.conf and mount into container on startup
+Use environment variable USE_FRESHCLAM_CONF_FILE or USE_CLAMD_CONF_FILE to enable feature. 
+Provide dedicated freshclam.conf or clamd.conf in source path and set target to /mnt/:
+   
+      docker run --mount type=bind,source=d:/mnt/,target=/mnt/ --env "USE_FRESHCLAM_CONF_FILE=true" -d -p 3310:3310 j1mprime/clamav-docker-alpine:1.0.1-alpine-3.14-maincvd-20211115
+
+
 ## Build and run the image locally
 1. Checkout https://github.com/j1mprime/clamav-docker-alpine.git
 1. Download https://database.clamav.net/main.cvd from clamav server.
