@@ -16,6 +16,11 @@ if [[ ! -z "${USE_CLAMD_CONF_FILE}" ]]; then
     cp -f /mnt/clamd.conf /etc/clamav/clamd.conf
 fi
 
+if [[ ! -z "${USE_MAIN_CVD_FILE}" ]]; then
+    echo "USE_MAIN_CVD_FILE env var set, replace initial main.cvd file /var/lib/clamav/main.cvd with /mnt/main.cvd"
+    cp -f /mnt/main.cvd /var/lib/clamav/main.cvd
+fi
+
 function clam_start () {
     # start clam service itself and the updater in background as daemon
     freshclam -d &
