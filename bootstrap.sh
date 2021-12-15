@@ -7,6 +7,7 @@ if [[ ! -z "${USE_FRESHCLAM_CONF_FILE}" ]]; then
     mv /etc/clamav/freshclam.conf /etc/clamav/freshclam.conf.bak
     echo "Replace file /etc/clamav/freshclam.conf with /mnt/freshclam.conf"
     cp -f /mnt/freshclam.conf /etc/clamav/freshclam.conf
+    dos2unix /etc/clamav/freshclam.conf
 fi
 
 if [[ ! -z "${USE_CLAMD_CONF_FILE}" ]]; then
@@ -14,11 +15,12 @@ if [[ ! -z "${USE_CLAMD_CONF_FILE}" ]]; then
     mv /etc/clamav/clamd.conf /etc/clamav/clamd.conf.bak
     echo "Replace file /etc/clamav/clamd.conf with /mnt/clamd.conf"
     cp -f /mnt/clamd.conf /etc/clamav/clamd.conf
+    dos2unix /etc/clamav/clamd.conf
 fi
 
 if [[ ! -z "${USE_MAIN_CVD_FILE}" ]]; then
-    echo "USE_MAIN_CVD_FILE env var set, replace initial main.cvd file /var/lib/clamav/main.cvd with /mnt/main.cvd"
-    cp -f /mnt/main.cvd /var/lib/clamav/main.cvd
+    echo "USE_MAIN_CVD_FILE env var set, replace initial main.cvd file /db/main.cvd with /mnt/main.cvd"
+    cp -f /mnt/main.cvd /db/main.cvd
 fi
 
 function clam_start () {
